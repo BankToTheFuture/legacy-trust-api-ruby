@@ -13,6 +13,12 @@ LegacyTrust.oauth_client_secret = config_env['OAUTH_CLIENT_SECRET']
 LegacyTrust.global_client_id = config_env['GLOBAL_CLIENT_ID']
 LegacyTrust.global_service_account_id = config_env['GLOBAL_SERVICE_ACCOUNT_ID']
 LegacyTrust.sandbox_mode = true
+LegacyTrust.test_access_token_base_url = config_env['TEST_ACCESS_TOKEN_BASE_URL']
+LegacyTrust.test_api_base_host = config_env['TEST_API_BASE_HOST']
+LegacyTrust.live_access_token_base_url = config_env['LIVE_ACCESS_TOKEN_BASE_URL']
+LegacyTrust.live_api_base_host = config_env['LIVE_API_BASE_HOST']
+LegacyTrust.access_token_endpoint = config_env['ACCESS_TOKEN_ENDPOINT']
+LegacyTrust.access_token_scope = config_env['ACCESS_TOKEN_SCOPE']
 
 VCR.configure do |config|
   config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
