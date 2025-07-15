@@ -1,0 +1,106 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: config_env['TEST_ACCESS_TOKEN_BASE_URL']/config_env['ACCESS_TOKEN_ENDPOINT']
+    body:
+      encoding: UTF-8
+      string: grant_type=client_credentials&scope=https%3A%2F%2Ffdtauthuat.onmicrosoft.com%2Fpartner-api%2F.default
+    headers:
+      User-Agent:
+      - Faraday v2.12.0
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Authorization:
+      - Basic YmY5NGRiZTEtNzk5NS00MWI0LTgwZjMtNDYxNGVlMjk2MDhlOjdnZzhRfmV6bnQtbXNyaC1mclFSVGlFVy5yZl9iSHozTXpOM0phbUY=
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-store, no-cache
+      Pragma:
+      - no-cache
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - "-1"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      X-Content-Type-Options:
+      - nosniff
+      P3p:
+      - CP="DSP CUR OTPi IND OTRi ONL FIN"
+      X-Ms-Request-Id:
+      - 8af3ad35-6ee1-4a1f-b70b-0dce43931b03
+      X-Ms-Ests-Server:
+      - 2.1.21171.5 - SEASLR1 ProdSlices
+      X-Ms-Srs:
+      - 1.P
+      Content-Security-Policy-Report-Only:
+      - object-src 'none'; base-uri 'self'; script-src 'self' 'nonce-o5TgJXOsxHvr7YV4PRfStg'
+        'unsafe-inline' 'unsafe-eval' https://*.msauth.net https://*.msftauth.net
+        https://*.msftauthimages.net https://*.msauthimages.net https://*.msidentity.com
+        https://*.microsoftonline-p.com https://*.microsoftazuread-sso.com https://*.azureedge.net
+        https://*.outlook.com https://*.office.com https://*.office365.com https://*.microsoft.com
+        https://*.bing.com 'report-sample'; report-uri https://csp.microsoft.com/report/ESTS-UX-All
+      X-Xss-Protection:
+      - '0'
+      Set-Cookie:
+      - fpc=AgZZaEQI9zJAtImTVYHfoIH6_boOAQAAALs6COAOAAAA; expires=Thu, 14-Aug-2025
+        12:04:12 GMT; path=/; secure; HttpOnly; SameSite=None
+      - stsservicecookie=estsfd; path=/; secure; samesite=none; httponly
+      - x-ms-gateway-slice=estsfd; path=/; secure; samesite=none; httponly
+      Date:
+      - Tue, 15 Jul 2025 12:04:11 GMT
+      Content-Length:
+      - '1397'
+    body:
+      encoding: UTF-8
+      string: '{"token_type":"Bearer","expires_in":3599,"ext_expires_in":3599,"access_token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Il9qTndqZVNudlRUSzhYRWRyNVFVUGtCUkxMbyJ9"}'
+  recorded_at: Tue, 15 Jul 2025 12:04:12 GMT
+- request:
+    method: post
+    uri: https://config_env['TEST_API_BASE_HOST']/3rd-party-bank-accounts/individual
+    body:
+      encoding: UTF-8
+      string: '{"clientId":config_env[''GLOBAL_CLIENT_ID'']}'
+    headers:
+      User-Agent:
+      - Faraday v2.12.0
+      Content-Type:
+      - application/json
+      Api-Version:
+      - 1.0.0
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Il9qTndqZVNudlRUSzhYRWRyNVFVUGtCUkxMbyJ9
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Tue, 15 Jul 2025 12:04:13 GMT
+      Content-Type:
+      - application/problem+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"type":"https://tools.ietf.org/html/rfc9110#section-15.5.1","title":"One
+        or more validation errors occurred.","status":400,"errors":{"AccountNumber":["The
+        AccountNumber field is required."],"BankAccountHolderDetails":["The BankAccountHolderDetails
+        field is required."]},"traceId":"00-6e06f3ef5c0f063777aa186d8d9bbe62-a04e1dd9e0a5a208-01"}'
+  recorded_at: Tue, 15 Jul 2025 12:04:13 GMT
+recorded_with: VCR 6.2.0
