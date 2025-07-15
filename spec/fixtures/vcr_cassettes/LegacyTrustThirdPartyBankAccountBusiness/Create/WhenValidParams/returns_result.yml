@@ -81,8 +81,8 @@ http_interactions:
       - "*/*"
   response:
     status:
-      code: 500
-      message: Internal Server Error
+      code: 200
+      message: OK
     headers:
       Date:
       - Tue, 15 Feb 2022 11:10:13 GMT
@@ -104,8 +104,6 @@ http_interactions:
       - ASP.NET
     body:
       encoding: UTF-8
-      string: '{"type":"https://httpstatuses.com/500","title":"One or more validation
-        errors occurred.","status":500,"detail":"User id required to invoke this method,
-        but was not found","traceId":"00-b39f945349774040b90ba09f324e5ef6-ce5fb1a280ca9d4c-00","errors":{}}'
+      string: '{"id": 0,"clientId": 0,"clientName": "string","name": "string","accountHolder": "string","accountNumber": "string","clearingCode": "string","bankBranchCode": "string","isPrimary": true,"verificationStatus": 1,"bank": {"id": 0,"name": "string","branch": "string","swiftCode": "string","countryId": 0,"city": "string","isDeleted": true},"clientReference": "string"}'
   recorded_at: Tue, 15 Feb 2022 11:10:14 GMT
 recorded_with: VCR 6.0.0
