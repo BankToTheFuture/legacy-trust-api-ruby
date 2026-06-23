@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    legacy-trust-api (0.3.14)
+    legacy-trust-api (0.3.15)
       awrence
       oauth2
       plissken

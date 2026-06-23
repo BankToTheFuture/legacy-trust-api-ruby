@@ -5,7 +5,7 @@ module LegacyTrust
   module Bank
     class << self
       #
-      # GET /banks/search
+      # GET /banks
       #
       # - +opts+: hash that allows to enter :params, :body and :headers
       #
@@ -15,7 +15,10 @@ module LegacyTrust
       #   - swift_code (String)
       #
       def fetch_all(opts = {})
-        LegacyTrust.request(:get, '/banks/search', opts)
+        result = LegacyTrust.request(:get, '/banks', opts)
+        return result unless result.body.is_a?(Hash) && result.body.key?(:results)
+
+        LegacyTrust::Result.new(status: result.status, body: result.body[:results])
       end
     end
   end
